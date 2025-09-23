@@ -16,6 +16,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bubbler+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -29,8 +32,8 @@
 
             </div>
             <ul class="navList">
-                <li>Home</li>
-                <li>Syllabus</li>
+                <li class="Home_Tab">Home</li>
+                <li class="Mini_Games">Mini-Games</li>
                 <li>Quizzes</li>
                 <li>User</li>
             </ul>
@@ -169,6 +172,59 @@
                     </div>
                 </div>
             </div>
+            <div class="Log_In_Section">
+
+                <div class="Log_In_Page">
+                    <div class="logIn_header">
+                        <div class="Head_Image">
+
+                        </div>
+                        <div class="Welcome">Welcome Back!!</div>
+                    </div>
+                    <div class="Login_Form">
+                        <form action="" class="Login_form">
+                            <select name="user_role" id="userPanel">
+                                <option value="Who" disabled selected>Who are you?</option>
+                                <option value="Student">Student</option>
+                                <option value="Teacher">Teacher</option>
+                            </select>
+                            <input type="username" class="Username" id="LogIn_username" placeholder="Username">
+                            <input type="password" class="Password" id="LogIn_passoword" placeholder="Password">
+                            <button class="Submit_BTN" type = "button">Log In</button>
+                            <span class="Forgot_Pass">Forgot Password?</span>
+                            <button class="SignUp_BTN" type = "button">Sign Up</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="Sign_Up_Section">
+
+                <div class="Sign_Up_Page">
+                    <div class="signUp_header">
+                        <div class="Head_Image">
+
+                        </div>
+                        <div class="Welcome">Create Account:</div>
+                    </div>
+                    <div class="SignUp_Form">
+                        <form action="" class="SignUp_form">
+                            <select name="user_role" id="SignUp_userPanel">
+                                <option value="Who" disabled selected>Who are you?</option>
+                                <option value="Student">Student</option>
+                                <option value="Teacher">Teacher</option>
+                            </select>
+                            <input type="text" class="Username_SignUp" id="username" placeholder="Select Username"
+                                required>
+                            <input type="password" class="Password" id="passoword" placeholder="Select Password"
+                                required>
+                            <input type="password" class="Password" id="confirm_passoword" placeholder="Confirm Password"
+                                required>
+                            <input type="email" class="username" id="email" placeholder="Enter email(optional)">
+                            <button class="Create_Account_BTN" type="button">Create Account</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <footer>
@@ -178,11 +234,41 @@
                     Contact us at:
                 </div>
                 <div class="email">
-                    greenofy225@gmail.com
+                    <a href="" class="email_anchor">greenofy225@gmail.com</a>
+                </div>
+                <div class="customer_serv">
+                    Visit customer Service
+                </div>
+                <div class="call-on">
+                    999-333-666
                 </div>
             </div>
         </div>
     </footer>
+    <div class="Mini-Games">
+        <div class="MGHeading">
+            Mini-Games:
+        </div>
+        <a href="https://shreshthapratapsingh.github.io/Guess-The-Number/" target="_blank">
+            <div class="game1 game">
+                <div class="gameImg game1_Img"></div>
+                <div class="game1_text">
+                    Guess The Number
+                </div>
+            </div>
+        </a>
+        <a href="https://shreshthapratapsingh.github.io/Snake-Water-and-Gun/" target="_blank">
+            <div class="game2 game">
+                <div class="gameImg game2_Img"></div>
+                <div class="game2_text">
+                    Snake, Water and Gun
+                </div>
+
+            </div>
+        </a>
+    </div>
+    <script src="../Javascript/login.js"></script>
+    <script src="../Javascript/signUp.js"></script>
 </body>
 
 </html>

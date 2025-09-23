@@ -3,11 +3,22 @@
     padding: 0;
 }
 
+@keyframes Easing {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 body {
     background-image: url(../images/Background/Main_Background/background.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    overflow-x: hidden;
 }
 
 
@@ -35,6 +46,80 @@ nav {
     font-weight: 900;
 }
 
+.MGHeading {
+    color: brown;
+    font-family: "Pacifico", cursive;
+    font-size: 2em;
+    font-weight: 800;
+    margin-top: 110px;
+    margin-bottom: 30px;
+}
+
+.Mini-Games {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.game {
+    cursor: pointer;
+    width: 90vw;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    border: 2px solid black;
+    background-color: rgba(255, 255, 255, 0.57);
+    border-radius: 15px;
+}
+
+.game:hover {
+    border: 2px solid grey;
+}
+
+.gameImg {
+    width: 10%;
+    height: 80%;
+    margin: 10px;
+    border-radius: 15px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.game1_Img {
+    background-image: url(../images/Background/Games_Background/Guess_The_number.png);
+}
+
+.game2_Img {
+    background-image: url(../images/Background/Games_Background/snake_water_gun.png);
+}
+
+.game1_text,
+.game2_text {
+    font-size: 1.8em;
+    font-family: "Bubbler One", sans-serif;
+    font-weight: 900;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo span {
+    font-family: "Bubbler One", sans-serif;
+    font-weight: 900;
+    font-size: 1.6em;
+    color: green;
+}
+
 .navList li:hover {
     text-decoration: underline;
 }
@@ -47,29 +132,26 @@ nav {
     gap: 1vw;
 }
 
-.container{
+.container {
+    position: relative;
     margin-top: 100px;
+    height: 100%;
+    width: 100%;
 }
 
 .boxes {
-    transition: 0.2s;
     position: relative;
-    overflow: hidden;
     cursor: pointer;
+    display: flex;
     width: 270px;
     height: 150px;
-    display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2em;
     color: white;
     font-family: "Lobster Two", sans-serif;
     border-radius: 15px;
-}
-
-.boxes:hover {
     transition: 0.2s;
-    transform: scale(1.08);
 }
 
 .Hamburger {
@@ -185,6 +267,26 @@ nav {
     z-index: 0;
 }
 
+.box1::before,
+.box2::before,
+.box3::before,
+.box4::before,
+.box5::before {
+    pointer-events: none;
+    /* allow mouse events to hit the .boxes */
+    z-index: 0;
+    /* ensure it stays behind content */
+    transition: transform 220ms ease-in-out,
+        filter 220ms ease-in-out;
+    transform-origin: center center;
+    border-radius: 15px;
+}
+
+.boxes:hover {
+    transition: 0.2s;
+    transform: scale(1.08);
+}
+
 .box5 {
     border: 3px solid rgb(75, 182, 218);
 }
@@ -235,7 +337,7 @@ ul li {
     margin: 10px;
     color: white;
     font-size: 1.4em;
-    font-family: "Pacifico", cursive;
+    font-family: "Bubbler One", sans-serif;
     font-weight: 500;
 }
 
@@ -264,7 +366,8 @@ ul li {
     align-items: center;
 }
 
-.Img, .Img2 {
+.Img,
+.Img2 {
     width: 50px;
     margin-left: 10px;
     background-image: url(../images/Icons/User.png);
@@ -276,23 +379,23 @@ ul li {
     border: 2px solid blue;
 }
 
-.Img2{
+.Img2 {
     width: 35px;
     height: 35px;
 }
 
-.img_name_level{
+.img_name_level {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.name{
+.name {
     font-size: 13px;
     color: green;
 }
 
-.level{
+.level {
     color: blue;
 }
 
@@ -315,7 +418,7 @@ ul li {
 .textInside,
 .Level_Topic {
     color: white;
-    font-family: "Pacifico", cursive;
+    font-family: "Bubbler One", sans-serif;
 }
 
 .Level_Topic {
@@ -333,7 +436,7 @@ ul li {
     transform: scale(1.06);
 }
 
-.LeaderBoards_Sec{
+.LeaderBoards_Sec {
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
@@ -347,7 +450,7 @@ ul li {
     background-color: rgba(0, 0, 255, 0.5);
 }
 
-.LeadBoxes{
+.LeadBoxes {
     background-color: bisque;
     width: 100%;
     height: 100%;
@@ -355,16 +458,23 @@ ul li {
     border-radius: 10px;
 }
 
-.ProfileBox, .GlobalRanking, .ClassLeaderboard, .UserRank_Class{
-    font-family: "Pacifico", cursive;
+.ProfileBox,
+.GlobalRanking,
+.ClassLeaderboard,
+.UserRank_Class {
+    font-family: "Bubbler One", sans-serif;
+    font-weight: 800;
     font-size: 1.3em;
 }
 
-.txtProfile, .TextGRank, .Text_Class_Leaderboard, .Text_UserRank_Class{
+.txtProfile,
+.TextGRank,
+.Text_Class_Leaderboard,
+.Text_UserRank_Class {
     margin: 10px;
 }
 
-.Level_Bar{
+.Level_Bar {
     width: 90%;
     height: 5%;
     margin: auto;
@@ -372,22 +482,22 @@ ul li {
     border: 2px solid rgb(201, 201, 201);
 }
 
-.slider_bar{
-width: 70%;
-height: 100%;
-background-color: grey;
+.slider_bar {
+    width: 70%;
+    height: 100%;
+    background-color: grey;
 }
 
-.exp{
+.exp {
     font-size: 12px;
 }
 
-.rank{
+.rank {
     font-size: 18px;
     color: darkgoldenrod;
 }
 
-.footContainer{
+.footContainer {
     width: 100%;
     height: 200px;
     border-top: 4px solid white;
@@ -395,15 +505,14 @@ background-color: grey;
     backdrop-filter: blur(5px);
 }
 
-.Contact_Us_At{
+.Contact_Us_At {
     margin: 10px;
 }
 
-.contText{
+.contText {
     color: white;
     font-family: "Pacifico", cursive;
-    font-size: 15px;
-    text-decoration: underline;
+    font-size: 25px;
 }
 
 .email {
@@ -411,7 +520,7 @@ background-color: grey;
     margin-top: 25px;
 }
 
-.playerBoxes{
+.playerBoxes {
     display: flex;
     flex-direction: column;
     gap: 2px;
@@ -419,7 +528,7 @@ background-color: grey;
     overflow-y: auto;
 }
 
-.Player_{
+.Player_ {
     border: 1px solid black;
     margin: auto;
     margin-top: 0px;
@@ -427,4 +536,152 @@ background-color: grey;
     border-radius: 10px;
     width: 90%;
     height: 20%;
+}
+
+.Log_In_Page {
+    animation: Easing 0.8s ease-out;
+    display: none;
+    width: 50%;
+    height: 75vh;
+    border: 2px solid black;
+    background-color: rgba(255, 255, 255, 0.833);
+    box-shadow: 10px 10px 20px black;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.Sign_Up_Page {
+    animation: Easing 0.8s ease-out;
+    display: none;
+    width: 50%;
+    height: 75vh;
+    border: 2px solid black;
+    background-color: rgba(255, 255, 255, 0.833);
+    box-shadow: 10px 10px 20px black;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.Log_In_Section {
+    animation: Easing 0.8s ease-out;
+    position: absolute;
+    width: 100vw;
+    z-index: 1000;
+    top: 0;
+    bottom: 0;
+    display: none;
+    justify-content: center;
+}
+
+.Sign_Up_Section {
+    animation: Easing 0.8s ease-out;
+    position: absolute;
+    width: 100vw;
+    z-index: 1000;
+    top: 0;
+    bottom: 0;
+    display: none;
+    justify-content: center;
+}
+
+.logIn_header,
+.signUp_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+.Head_Image {
+    width: 100px;
+    height: 100px;
+    background-image: url(../images/Logo/Greenofy6.png);
+    background-size: cover;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.Welcome {
+    color: green;
+    font-family: "Pacifico", cursive;
+    font-size: 1.5em;
+}
+
+.Login_form,
+.SignUp_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.Username,
+.Password, .Username_SignUp, .username {
+    background: url(../images/Icons/leaf.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center left;
+    width: 80%;
+    height: 30px;
+    border-radius: 30px;
+    padding: 5px;
+    padding-left: 45px;
+    border: 2px solid green;
+}
+
+input {
+    font-size: 1.2em;
+}
+
+.Submit_BTN,
+.SignUp_BTN, .Create_Account_BTN {
+    transition: 0.1s;
+    cursor: pointer;
+    width: 20%;
+    height: 40px;
+    border-radius: 30px;
+    background-color: rgb(0, 220, 0);
+    border: 2px solid green;
+    font-family: "Pacifico", cursive;
+    font-size: 1.3em;
+}
+
+
+
+.SignUp_BTN {
+    background-color: white;
+}
+
+.Submit_BTN:hover,
+.SignUp_BTN:hover, .Create_Account_BTN:hover {
+    transition: 0.1s;
+    transform: scale(1.05);
+}
+
+#userPanel, #SignUp_userPanel {
+    width: 30%;
+    border-radius: 10px;
+    border: 3px solid green;
+    font-family: "Pacifico", cursive;
+    height: 40px;
+    background-color: lightgreen;
+    font-size: 1.2em;
+}
+
+.Forgot_Pass {
+    cursor: pointer;
+    color: grey;
+    font-family: "Pacifico", cursive;
+}
+
+.email_anchor, .customer_serv, .call-on{
+    margin-top: 10px;
+    font-size: 1.1em;
+    text-decoration: underline;
+    color: white;
+    font-family: "Bubbler One", sans-serif;
+}
+
+.Forgot_Pass:active {
+    text-decoration: underline;
 }
